@@ -14,12 +14,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AdditionActivity extends AppCompatActivity {
+public class SubstractionActivity extends AppCompatActivity {
 
-    Button bt5, bt6;
-    EditText et3, et4;
-    Integer num1, num2, sum;
-    String getNum1, getNum2, Result;
+    Button bt7,bt8;
+    EditText et3,et4;
+    Integer num1,num2,sum;
+    String getNum1,getNum2,Result;
 
     TextView tv;
 
@@ -27,39 +27,38 @@ public class AdditionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_addition);
+        setContentView(R.layout.activity_substraction);
 
-        bt5 = (Button) findViewById(R.id.plus);
-        bt6 = (Button) findViewById(R.id.back);
-        et3 = (EditText) findViewById(R.id.one);
-        et4 = (EditText) findViewById(R.id.two);
-        tv =(TextView) findViewById(R.id.resdis);
+        bt7=(Button) findViewById(R.id.backtobtn);
+        bt8=(Button) findViewById(R.id.minusbtn);
+        et3=(EditText)findViewById(R.id.subone);
+        et4=(EditText)findViewById(R.id.subtwo);
+        tv=(TextView) findViewById(R.id.ress);
 
-        bt6.setOnClickListener(new View.OnClickListener() {
+        bt7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent ob2 = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(ob2);
-
             }
         });
 
-
-        bt5.setOnClickListener(new View.OnClickListener() {
+        bt8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getNum1 = et3.getText().toString();
-                getNum2 = et4.getText().toString();
-                num1 = Integer.parseInt(getNum1);
-                num2 = Integer.parseInt(getNum2);
-                sum = num1 + num2;
-                Result = String.valueOf(sum);
+                getNum1=et3.getText().toString();
+                getNum2=et4.getText().toString();
+                num1=Integer.parseInt(getNum1);
+                num2=Integer.parseInt(getNum2);
+                sum=num1-num2;
+                Result=String.valueOf(sum);
                 tv.setText(Result);
-
-
-                Toast.makeText(getApplicationContext(), Result, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),Result,Toast.LENGTH_LONG).show();
             }
         });
+
+
+
 
     }
 }
